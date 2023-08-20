@@ -1,0 +1,10 @@
+def employee_menu(username, gender):
+    user=input("Enter username: ")
+    while user == username:
+        if gender=="male":
+            print("Hi Mr. " + username)
+        else:
+            print("Hi Ms. " + username)
+    print("1. Check my salary")
+    print("2. Exit")
+    choose=input("Choose")

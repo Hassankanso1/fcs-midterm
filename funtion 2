@@ -1,0 +1,38 @@
+def menu():
+    print("Welcome User")
+    username=input("enter username: ")
+    password=input("enter password: ")
+    if username=="admin" or password=="admin123123":
+        admin_menu()
+    else:
+        employee_menu(username)
+
+
+print(menu())
+
+def admin_menu():
+    print("1. Dispaly Statistics")
+    print("2. Add an Employee")
+    print("3. Display all employees")
+    print("4. Change employee's salary")
+    print("5. Remove employee")
+    print("6. Raise employee's salary")
+    print("7. Exit")
+
+print(admin_menu)
+
+def employee_menu(username, gender):
+    user=input("Enter username: ")
+    while user == username:
+        if gender=="male":
+        print("Hi Mr. " + username)
+        else:
+        print("Hi Ms. " + username)
+    print("1. Check my salary")
+    print("2. Exit")
+    choose=input("Choose")
+    if choose=="1":
+
+
+
+def statistics()
