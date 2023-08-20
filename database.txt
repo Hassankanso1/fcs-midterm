@@ -1,0 +1,11 @@
+emp001, cdaoud, 20220802, male, 12000
+emp002, manuella, 20220803, female, 1200
+emp003, cchehade, 20220808, female, 8000
+emp004, nsherfan, 20221013, female, 13000
+emp005, sdakdouk, 20221229, male, 7500
+emp006, mnasrallah, 20220303, female, 10000
+emp007, haoun,20220918, female, 16000
+emp008, rramal, 20230616, male, 14500
+emp009, jjalloul, 20210717, female, 13750
+emp010, ssalam, 20231002, male, 10000
+emp011, gfaddoul, 20230105, male, 9500 

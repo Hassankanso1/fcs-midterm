@@ -9,4 +9,5 @@ def uploading():
                                'gender':gender,
                                'salary':int(salary)}
         return data
+
 print(uploading())
