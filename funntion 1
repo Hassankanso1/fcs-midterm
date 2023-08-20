@@ -26,17 +26,47 @@ def employee_menu(data,username):
     elif choose==2:
         menu()   
 
+#function 3: admin menu defined
+def admin_menu():
+    print("1. Dispaly Statistics")
+    print("2. Add an Employee")
+    print("3. Display all employees")
+    print("4. Change employee's salary")
+    print("5. Remove employee")
+    print("6. Raise employee's salary")
+    print("7. Exit")
+    choose=int(input("Choose: ")
+    
+
 #last funciton: menu display
 def menu():
+    verification=False
+    iterator=1
     data=uploading()
     print("cdaoud" in data.values())
-    print("Welcome User")
-    user=input("enter username: ")
-    password=input("enter password: ")
-    if user=="admin" and password=="admin123123":
-        admin_menu()
-    elif user in data.keys():
-        employee_menu(data,user)
+
+
+    while iterator<=5 and verification == False:
+
+        print("Welcome User")
+        user=input("enter username: ")
+        password=input("enter password: ")
+
+        if user=="admin" and password=="admin123123" :
+            admin_menu()
+            verification=True
+
+        elif user in data.keys():
+            employee_menu(data,user)
+            verification=True
+
+        else:
+            print("Try again")
+            iterator+=1
+
+    if iterator==5:
+        print('5 Trials')
+        return
 
 
 menu()
