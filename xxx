@@ -10,7 +10,7 @@ def employee_menu(data,username):
         print(data[username][salary])
 
     elif choose=="2":
-        main()
+        return
     
     
     
