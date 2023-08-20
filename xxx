@@ -1,10 +1,20 @@
-def employee_menu(username, gender):
-    user=input("Enter username: ")
-    while user == username:
-        if gender=="male":
-            print("Hi Mr. " + username)
-        else:
-            print("Hi Ms. " + username)
+def employee_menu(data,username):
+    if data[username]["gender"]=="male":
+        print("Hi Mr. " + username)
+    else:
+        print("Hi Ms. " + username)
     print("1. Check my salary")
     print("2. Exit")
-    choose=input("Choose")
+    choose=int(input("Choose"))
+    if choose=="1":
+        print(data[username][salary])
+
+    elif choose=="2":
+        main()
+    
+    
+    
+    
+    
+
+
