@@ -23,7 +23,7 @@ print(admin_menu)
 
 def employee_menu(username, gender):
     user=input("Enter username: ")
-    while user == username:
+    while user = username:
         if gender=="male":
         print("Hi Mr. " + username)
         else:

@@ -17,9 +17,9 @@ def menu():
     print("Welcome User")
     user=input("enter username: ")
     password=input("enter password: ")
-    if username=="admin" or password=="admin123123":
+    if user=="admin" and password=="admin123123":
         admin_menu()
-    elif user== username:
+    elif user in (database) username:
         employee_menu
 
         
