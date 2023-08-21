@@ -59,6 +59,14 @@ def display_all(data):
 
 #function 7 to remove employee
 
+def remove_employee(data, username):
+    if username in data:
+        remove = data.pop(username)
+        print(remove["username"] + "removed")
+    else:
+        print(username + " not in database")
+    
+
 #function 8 to increase salary
 
 
@@ -68,6 +76,7 @@ def display_all(data):
 #function 10: admin menu defined
 def admin_menu():
     data=uploading()
+    
     print("1. Dispaly Statistics")
     print("2. Add an Employee")
     print("3. Display all employees")
@@ -91,7 +100,8 @@ def admin_menu():
         change_salary()
         admin_menu()
     elif choose==5:
-        remove_employee()
+        user=input("Enter employee to remove: ")
+        remove_employee(data,user)
         admin_menu()
     elif choose==6:
         increase_salary()
