@@ -73,6 +73,19 @@ def display_all(data):
 
 #function 6 to change employee's salary
 
+def change_salary(data):
+    id = input("Enter id: ")
+    if id in [database["employee id"] for database in data.values()]:    #https://stackoverflow.com/questions/8088516/check-sql-database-if-value-exists-and-then-return-value-if-it-does
+        new_salary = int(input("Enter new salary: "))
+        for database in data.values():
+            if database["employee id"] == id:
+                database["salary"] = new_salary
+                print("Salary is changed")
+    else:
+        print("not found")
+
+
+
 #function 7 to remove employee
 
 def remove_employee(data, username):
@@ -84,7 +97,6 @@ def remove_employee(data, username):
     
 
 #function 8 to increase salary
-
 
 
 
@@ -113,7 +125,7 @@ def admin_menu():
         display_all(data)
         admin_menu()
     elif choose==4:
-        change_salary()
+        change_salary(data)
         admin_menu()
     elif choose==5:
         user=input("Enter employee to remove: ")
