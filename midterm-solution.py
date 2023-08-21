@@ -32,15 +32,15 @@ def statistics(data):
     male=0
     female=0
     
-    for i in data.keys():
-        if i["gender"]=="male":
+    for emp in data.values():
+        if emp["gender"]=="male":
             male += 1
-        if i["gender"]=="female":
+        if emp["gender"]=="female":
             female += 1
     total=male+female
-    male_=(male/total)*100
-    female_=(female/total)*100
-    print(male_,female_)
+    male_=int((male/total)*100)
+    female_=int((female/total)*100)
+    print("male: ", male_,"%", "female: ", female_, "%")
 
 #function 4 to add employee
 
@@ -61,7 +61,7 @@ def display_all(data):
 
 #function 8 to increase salary
 
-#function 9 to exit
+
 
 
 
