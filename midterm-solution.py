@@ -87,7 +87,6 @@ def change_salary(data):
 
 
 #function 7 to remove employee
-
 def remove_employee(data, username):
     if username in data:
         remove = data.pop(username)
@@ -96,8 +95,16 @@ def remove_employee(data, username):
         print(username + " not in database")
     
 
-#function 8 to increase salary
+#function 8 to increase salary:
 
+def increase_salary(data):
+    id = input("Enter id: ")
+    increase = float(input("Enter raise percentage: "))
+    if id in data.values():
+        data[id]['salary'] *= increase
+        print("Salary is raised")
+    else:
+        print("not found")
 
 
 
@@ -114,7 +121,7 @@ def admin_menu():
     print("7. Exit")
 
     choose=int(input("Choose: "))
-    
+
     if choose==1:
         statistics(data)
         admin_menu()
@@ -132,7 +139,7 @@ def admin_menu():
         remove_employee(data,user)
         admin_menu()
     elif choose==6:
-        increase_salary()
+        increase_salary(data)
         admin_menu()
     elif choose==7:
         menu()
