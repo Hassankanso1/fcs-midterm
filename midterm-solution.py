@@ -1,7 +1,7 @@
 #funnction 1: read data
 def uploading():
     data={}
-    with open ("database.txt", "r") as f:    
+    with open ("database.txt", "r") as f:      #https://www.youtube.com/watch?v=2dUu7r14JwM
         for line in f: 
             [employee_id, username, timestamp, gender, salary]=line.split(', ') #https://www.freecodecamp.org/news/the-string-strip-method-in-python-explained/
             data[username]={'employee id':employee_id,
@@ -44,6 +44,22 @@ def statistics(data):
 
 #function 4 to add employee
 
+def add_employee(data):
+    employees = len(data) + 1
+    employee_id = "emp" + ("0" * (3 - len(str(employees))) + str(employees))
+    username = input("Enter username: ")
+    gender = input("Enter gender: ")
+    salary = int(input("Enter salary: "))
+    import datetime
+    time = datetime.datetime.time()                   #https://www.freecodecamp.org/news/python-datetime-now-how-to-get-todays-date-and-time/
+    timestamp = "{:04d}{:02d}{:02d}".format(time.year, time.month, time.day)
+    data[username] = {"employee id": employee_id,
+                      "timestamp": timestamp,
+                      "gender": gender,
+                      "salary": salary}
+
+    print(username + "is added")
+
 #function 5 to display all employees
 def display_all(data):
      sorting_employees = sorted(data.values(), key=lambda x: x["timestamp"])    #https://stackoverflow.com/questions/62810058/python-is-there-a-way-to-sort-a-list-of-strings-which-contain-a-date-and-time-w
@@ -73,7 +89,7 @@ def remove_employee(data, username):
 
 
 
-#function 10: admin menu defined
+#function 9: admin menu defined
 def admin_menu():
     data=uploading()
     
@@ -91,7 +107,7 @@ def admin_menu():
         statistics(data)
         admin_menu()
     elif choose==2:
-        add_employee()
+        add_employee(data)
         admin_menu()
     elif choose==3:
         display_all(data)
@@ -115,7 +131,7 @@ def admin_menu():
         
     
 
-#function 11: menu display
+#function 10: menu display
 def menu():
     verification=False
     iterator=1
