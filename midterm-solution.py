@@ -1,4 +1,5 @@
 #funnction 1: read data
+#O(n)
 def uploading():
     data={}
     with open ("database.txt", "r") as f:      #https://www.youtube.com/watch?v=2dUu7r14JwM
@@ -11,6 +12,7 @@ def uploading():
         return data
     
 #function 2 : employee Menu defined
+#O(1)
 def employee_menu(data,username):
     if data[username]["gender"]=="male":
         print("Hi Mr. " + username)
@@ -28,6 +30,7 @@ def employee_menu(data,username):
 
 
 #function 3: Display statistics:
+#O(n)
 def statistics(data):
     male=0
     female=0
@@ -43,7 +46,7 @@ def statistics(data):
     print("male: ", male_,"%", "female: ", female_, "%")
 
 #function 4 to add employee
-
+#O(1)
 def add_employee(data):
     employees = len(data) + 1
     employee_id = "emp" + ("0" * (3 - len(str(employees))) + str(employees))
@@ -61,6 +64,7 @@ def add_employee(data):
     print(username + "is added")
 
 #function 5 to display all employees
+#O(n)
 def display_all(data):
      sorting_employees = sorted(data.values(), key=lambda x: x["timestamp"])    #https://stackoverflow.com/questions/62810058/python-is-there-a-way-to-sort-a-list-of-strings-which-contain-a-date-and-time-w
      for i in sorting_employees:
@@ -72,7 +76,7 @@ def display_all(data):
 
 
 #function 6 to change employee's salary
-
+#O(1)
 def change_salary(data):
     id = input("Enter id: ")
     if id in [database["employee id"] for database in data.values()]:    #https://stackoverflow.com/questions/8088516/check-sql-database-if-value-exists-and-then-return-value-if-it-does
@@ -87,6 +91,7 @@ def change_salary(data):
 
 
 #function 7 to remove employee
+#O(1)
 def remove_employee(data, username):
     if username in data:
         remove = data.pop(username)
@@ -96,7 +101,7 @@ def remove_employee(data, username):
     
 
 #function 8 to increase salary:
-
+#O(1)
 def increase_salary(data):
     id = input("Enter id: ")
     increase = float(input("Enter raise percentage: "))
@@ -109,6 +114,7 @@ def increase_salary(data):
 
 
 #function 9: admin menu defined
+#O(n)
 def admin_menu():
     data=uploading()
     
@@ -151,6 +157,7 @@ def admin_menu():
     
 
 #function 10: menu display
+#O(1)
 def menu():
     verification=False
     iterator=1
