@@ -22,9 +22,26 @@ def employee_menu(data,username):
     print(choose)
     if choose==1:
         print(data[username]["salary"])
+        menu()
 
     elif choose==2:
         menu()   
+
+
+#function 4: Display statistics:
+def statistics(data):
+    male=0
+    female=0
+    total=len(data)
+    for i in data():
+        if i["gender"]=="male":
+            male +=1
+        if i["gender"]=="female":
+            female +=1
+    male_=(male/total)*100
+    female_=(female/total)*100
+    print(male_,female_)
+
 
 #function 3: admin menu defined
 def admin_menu():
@@ -35,7 +52,9 @@ def admin_menu():
     print("5. Remove employee")
     print("6. Raise employee's salary")
     print("7. Exit")
-    choose=int(input("Choose: ")
+    choose=int(input("Choose: "))
+    if choose==1:
+        statistics()
     
 
 #last funciton: menu display
@@ -70,4 +89,3 @@ def menu():
 
 
 menu()
-
