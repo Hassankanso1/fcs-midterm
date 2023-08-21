@@ -1,19 +1,35 @@
-def employee_menu(data,username):
-    if data[username]["gender"]=="male":
-        print("Hi Mr. " + username)
-    else:
-        print("Hi Ms. " + username)
-    print("1. Check my salary")
-    print("2. Exit")
-    choose=int(input("Choose"))
-    if choose=="1":
-        print(data[username][salary])
+def employee_menu(data, username):
+    while True:
+        if data[username]["gender"] == "male":
+            print("Hi Mr. " + username)
+        else:
+            print("Hi Ms. " + username)
+        print("1. Check my salary")
+        print("2. Exit")
 
-    elif choose=="2":
-        return
-    
-    
-    
+        choose = int(input("Choose: "))
+        
+        if choose == 1:
+            print(data[username]["salary"])
+        elif choose == 2:
+            print("Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+# Example usage
+employee_data = {
+    "John": {"gender": "male", "salary": 50000},
+    "Emily": {"gender": "female", "salary": 45000},
+    # Other employee data...
+}
+
+employee_username = input("Enter your username: ")
+if employee_username in employee_data:
+    employee_menu(employee_data, employee_username)
+else:
+    print("Username not recognized.")
+
     
     
 

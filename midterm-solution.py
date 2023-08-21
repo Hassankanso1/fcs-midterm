@@ -19,15 +19,45 @@ def employee_menu(data,username):
     print("1. Check my salary")
     print("2. Exit")
     choose=int(input("Choose: "))
-    print(choose)
     if choose==1:
         print(data[username]["salary"])
+        employee_menu(data,username)
 
     elif choose==2:
         menu()   
 
 
-#function 3: admin menu defined
+#function 3: Display statistics:
+def statistics(uploading):
+    male=0
+    female=0
+    
+    for i in uploading():
+        if i["gender"]=="male":
+            male += 1
+        if i["gender"]=="female":
+            female += 1
+    total=male+female
+    male_=(male/total)*100
+    female_=(female/total)*100
+    print(male_,female_)
+
+#function 4 to add employee
+
+#function 5 to display all employees
+
+
+#function 6 to change employee's salary
+
+#function 7 to remove employee
+
+#function 8 to increase salary
+
+#function 9 to exit
+
+
+
+#function 10: admin menu defined
 def admin_menu():
     print("1. Dispaly Statistics")
     print("2. Add an Employee")
@@ -37,14 +67,19 @@ def admin_menu():
     print("6. Raise employee's salary")
     print("7. Exit")
     choose=int(input("Choose: "))
+    if choose==1:
+        statistics(uploading)
+    
+    
+        
     
 
-#last funciton: menu display
+#function 11: menu display
 def menu():
     verification=False
     iterator=1
     data=uploading()
-    print("cdaoud" in data.values())
+    #print("cdaoud" in data.values())
 
 
     while iterator<=5 and verification == False:
