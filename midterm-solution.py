@@ -28,11 +28,11 @@ def employee_menu(data,username):
 
 
 #function 3: Display statistics:
-def statistics(uploading):
+def statistics(data):
     male=0
     female=0
     
-    for i in uploading():
+    for i in data.keys():
         if i["gender"]=="male":
             male += 1
         if i["gender"]=="female":
@@ -45,6 +45,14 @@ def statistics(uploading):
 #function 4 to add employee
 
 #function 5 to display all employees
+def display_all(data):
+     sorting_employees = sorted(data.values(), key=lambda x: x["timestamp"])    #https://stackoverflow.com/questions/62810058/python-is-there-a-way-to-sort-a-list-of-strings-which-contain-a-date-and-time-w
+     for i in sorting_employees:
+        print("employee id:", i['employee id'])
+        print("timestamp:", i['timestamp'])
+        print("gender:", i['gender'])
+        print("salary:", i['salary'])
+    
 
 
 #function 6 to change employee's salary
@@ -59,6 +67,7 @@ def statistics(uploading):
 
 #function 10: admin menu defined
 def admin_menu():
+    data=uploading()
     print("1. Dispaly Statistics")
     print("2. Add an Employee")
     print("3. Display all employees")
@@ -66,10 +75,32 @@ def admin_menu():
     print("5. Remove employee")
     print("6. Raise employee's salary")
     print("7. Exit")
+
     choose=int(input("Choose: "))
-    if choose==1:
-        statistics(uploading)
     
+    if choose==1:
+        statistics(data)
+        admin_menu()
+    elif choose==2:
+        add_employee()
+        admin_menu()
+    elif choose==3:
+        display_all(data)
+        admin_menu()
+    elif choose==4:
+        change_salary()
+        admin_menu()
+    elif choose==5:
+        remove_employee()
+        admin_menu()
+    elif choose==6:
+        increase_salary()
+        admin_menu()
+    elif choose==7:
+        menu()
+    elif choose<1 or choose >7:
+        print("Choose again")
+        admin_menu()
     
         
     
